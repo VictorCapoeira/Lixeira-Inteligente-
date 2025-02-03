@@ -41,9 +41,8 @@ Depois de ter o projeto montando, os testes foram realizados, e o projeto foi ad
 ![image](https://github.com/user-attachments/assets/698b3f6f-3de7-4769-ae21-e5e8029830ec)
 ![image](https://github.com/user-attachments/assets/c21c92d1-f37e-42a9-91c9-bedbaf483864)
 ![image](https://github.com/user-attachments/assets/90936f25-abad-45be-9b1c-2baf9ad3be8d)
-
-
-
+## Links
+Tinkercad: https://www.tinkercad.com/things/hiXOdpZPMEy-projetolixeirav2?sharecode=q-EhdrNT6YVmq9v7VAdqioeNodyu3uyAm0_9n_qVGPo
 
 
 
