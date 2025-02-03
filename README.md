@@ -35,6 +35,13 @@ Depois de ter o projeto montando, os testes foram realizados, e o projeto foi ad
 ![image](https://github.com/user-attachments/assets/0f5eaa83-3f13-442d-98a4-3ea9c9ea15d0)
 ### Kanban no Trello
 ![image](https://github.com/user-attachments/assets/39e0f84e-e18d-4974-b640-c0a58486bacc)
+### Projeto final 
+![image](https://github.com/user-attachments/assets/b4f9d91c-93bd-4fd4-980a-6e1b0af6782c)
+![image](https://github.com/user-attachments/assets/80a5539c-a579-4230-b22c-cd1eedc6c536)
+![image](https://github.com/user-attachments/assets/698b3f6f-3de7-4769-ae21-e5e8029830ec)
+![image](https://github.com/user-attachments/assets/c21c92d1-f37e-42a9-91c9-bedbaf483864)
+![image](https://github.com/user-attachments/assets/90936f25-abad-45be-9b1c-2baf9ad3be8d)
+
 
 
 
