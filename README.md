@@ -7,7 +7,7 @@ O projeto consiste em uma lixeira que abre automaticamente ao detectar a proximi
 * C++
 * Trello
 * TinkerCad
-## Principais materiais utilizadas
+## Principais materiais utilizados
 * 1 x Arduino Uno R3
 * 1 x Cabo USB
 * 1 x Sensor de distância ultrassônico
