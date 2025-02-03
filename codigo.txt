@@ -1,0 +1,217 @@
+#include <Servo.h> // Biblioteca para controlar o servo motor 
+
+ 
+
+const int triggerPin = 7;  
+
+//Criando uma variavel do tipo int e guardando um número inteiro 
+
+const int echoPin = 6; 
+
+//Criando uma variavel do tipo int e guardando um número inteiro 
+
+//Tanto triggerPin e echoPin foram criadas para fazerem 
+
+//referencia ao pinos que serão conectados entre o arduino e o sensor 
+
+ 
+
+Servo servoMotor; 
+
+//Instanciando um objeto servoMotor da classe Servo. Desse modo, 
+
+//será possivel usar os metodos e propiedades da classe Servo 
+
+ 
+
+const int servoPin = 9; 
+
+//Criando uma variavel do tipo int e guardando um número inte'iro 
+
+//servoPin foi criada para fazer referencia ao pino que será 
+
+//conectado 
+
+ 
+
+long duracao; 
+
+// Criando uma variavel do tipo long, ele será iniciada sem valor 
+
+ 
+
+int distancia; 
+
+ 
+
+// Criando uma variavel do tipo int, ele será iniciada sem valor 
+
+ 
+
+const int distancia_ativacao = 60;  
+
+//Criando uma variavel do tipo int e guardando um número inteiro 
+
+ 
+
+ 
+
+void setup() { 
+
+  // Configura os pinos do sensor ultrassônico 
+
+   
+
+  pinMode(triggerPin, OUTPUT); 
+
+  //Configurando o pino 7(triggerPin) como uma saida de dados 
+
+   
+
+  pinMode(echoPin, INPUT); 
+
+  //Configurando o pino 6(echoPin) como uma entrada de dados 
+
+ 
+
+   
+
+  servoMotor.attach(servoPin); 
+
+  //Configurando o pino 9(servoPin) para conectar ao servo 
+
+   
+
+  servoMotor.write(0);  
+
+  //Inicinalizando o servo na posição 0, usando o comando write 
+
+  //para escrever um valor 
+
+   
+
+   
+
+  Serial.begin(9600); 
+
+  // Configura a comunicação serial para monitorar os  
+
+  //dados no monitor serial 
+
+ 
+
+} 
+
+ 
+
+void loop() { 
+
+  // Envia o pulso ultrassônico 
+
+   
+
+  digitalWrite(triggerPin, LOW); 
+
+  //Definindo o pino do sensor como 0V, garantindo assim que o 
+
+  //estado inicial do sensor sempre seja 0 
+
+  delayMicroseconds(2); 
+
+  //Aplicando um delay(espera) para a proxima linha de código 
+
+  //Esse atraso existe para garantir que dê tempo para o sensor 
+
+  //realmente ser desligado 
+
+   
+
+  digitalWrite(triggerPin, HIGH); 
+
+  //Definindo o pino do sensor como 5V(no caso), fazendo com que 
+
+  //o sensor seja ativado e um pulso seja enviado  
+
+  delayMicroseconds(10); 
+
+  //Aplicando um delay(espera) para a proxima linha de código 
+
+  //Esse atraso existe para garantir que dê tempo para o sensor 
+
+  //reconheça o pulso de ativação 
+
+   
+
+  digitalWrite(triggerPin, LOW); 
+
+  //Definindo o pino do sensor como 0V(no caso), fazendo com que 
+
+  //o pulso seja finalizado 
+
+ 
+
+  duracao = pulseIn(echoPin, HIGH); 
+
+  // Calcula a duração que o pulso leva para retornar e adiciona 
+
+  //esse valor a uma variavel 
+
+ 
+
+  distancia = duracao * 0.034 / 2; 
+
+  // Calcula a distância com base na velocidade do som e adicina 
+
+  //esse valor a uma variavel 
+
+ 
+
+ 
+
+  // Imprime a distância no monitor serial 
+
+  Serial.print("Distância: "); 
+
+  Serial.print(distancia); 
+
+  Serial.println(" cm"); 
+
+ 
+
+  // Se a distância for menor que o limite, abre a tampa 
+
+  if (distancia <= distancia_ativacao)  
+
+  { 
+
+    servoMotor.write(90);  
+
+    //Movendo o motor para a posição 90(graus) 
+
+    delay(5000);           
+
+    //Dando uma atraso 
+
+  } else  
+
+  { 
+
+    //se não 
+
+    servoMotor.write(0); 
+
+    //Movendo o motor para a posição 0(graus) 
+
+  } 
+
+ 
+
+  delay(500); 
+
+  //Dando uma atraso 
+
+ 
+
+} 
+
+ 
